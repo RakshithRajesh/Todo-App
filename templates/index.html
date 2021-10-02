@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %} Home Page {% endblock title %}
+{% block content %}
+    
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning alert-dismissible fade show container" role="alert">
+        <strong>{{ message }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    <div class="container mt-4">
+    <h1 style="text-align: center;">TODO APP</h1><br>
+    <form class="row g-3 justify-content-center" method="POST">
+        {{ form.hidden_tag() }}
+        <div class="col-auto">
+            {{ form.name(class="form-control", placeholder="Enter Name") }}
+        </div>
+        <div class="col-auto">
+            {{ form.submit(class="btn btn-info mb-3") }}
+        </div>
+    </form>
+    </div><br>
+    {% for user in user_list %}
+    <li class="list-group-item d-flex justify-content-between align-items-center container">
+        {{ user.name }}
+        <div class="d-grid gap-2 d-md-block">
+            <a href="/updatename/{{ user.id }}" class="btn btn-success btn-sm">&orarr;</a>
+            <a href="/delete/{{ user.id }}" class="btn btn-danger btn-sm">&#10006;</a>
+        </div>
+    </li>
+    {% endfor %}
+{% endblock content %}
