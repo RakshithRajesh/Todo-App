@@ -1,5 +1,8 @@
 # Todo-App
-## Features of the TODO App:
-### Create TODOs
-### Delete TODOs
-### Update TODOs
+
+## You can just run the 'app.py' program and get started!!
+
+### Features of the TODO App:
+#### Create TODOs
+#### Delete TODOs
+#### Update TODOs
